@@ -14,4 +14,8 @@ const addReservationData = (newReservation) => {
     .then(response => response.json())
 }
 
-export {getReservationsData, addReservationData}
+const deleteReservationData = (id) => {
+    return fetch(`http://localhost:3001/api/v1/reservations/${id}`, {method: 'DELETE'})
+}
+
+export {getReservationsData, addReservationData, deleteReservationData}

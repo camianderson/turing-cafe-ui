@@ -1,10 +1,10 @@
 import React from 'react';
 import Reservation from '../Reservation/Reservation'
 
-const List = ({reservations}) => {
+const List = ({reservations, deleteRes}) => {
   const allReservations = reservations.map(reservation => {
     return (
-      <Reservation details={reservation}/>
+      <Reservation details={reservation} deleteRes={deleteRes}/>
     )
   })
 
