@@ -10,7 +10,7 @@ class App extends Component {
       reservations: []
     }
   }
-  
+
   componentDidMount(){
     fetch('http://localhost:3001/api/v1/reservations')
     .then(response => response.json())
@@ -18,7 +18,10 @@ class App extends Component {
       this.setState({reservations: data})
     })
   }
-
+  
+  addReservation = (newReservation) => {
+    this.setState({reservations: [...this.state.reservations, newReservation]})
+  }
   render() {
     return (
       <div className="App">
