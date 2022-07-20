@@ -17,11 +17,10 @@ class Form extends Component {
 
   createReservation = (event) => {
     event.preventDefault();
-    const newReservation = this.setState({
+    const newReservation = {
       id: Date.now(),
-      key: Date.now(),
       ...this.state
-    })
+    }
     this.props.addRes(newReservation);
     this.clearInputs();
   }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Reservation = ({details}) => {
-  console.log(details)
   return (
     <section className="single-res">
       <h1>{details.name}</h1>
