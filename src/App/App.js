@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from '../List/List';
 import Form from '../Form/Form';
+import {getReservationsData, addReservationData} from '../apiCalls'
 import './App.css';
 
 class App extends Component {
@@ -11,19 +12,21 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    fetch('http://localhost:3001/api/v1/reservations')
-    .then(response => response.json())
+    getReservationsData()
     .then (data => {
       this.setState({reservations: data})
     })
   }
 
   addReservation = (newReservation) => {
-    this.setState({reservations: [...this.state.reservations, newReservation]})
+    addReservationData(newReservation)
+    .then(data => {
+      this.setState({reservations: [...this.state.reservations, data]})
+    })
   }
 
   render() {
-    console.log(this.state.reservations)
+      console.log(this.state.reservations)
     return (
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
