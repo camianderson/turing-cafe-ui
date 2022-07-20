@@ -1,5 +1,6 @@
 import React from 'react';
 import Reservation from '../Reservation/Reservation'
+import './List.css'
 
 const List = ({reservations, deleteRes}) => {
   const allReservations = reservations.map(reservation => {

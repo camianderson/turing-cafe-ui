@@ -40,6 +40,7 @@ class Form extends Component {
         <input
           type='text'
           name='name'
+          className='input-name'
           placeholder='Name'
           value={this.state.name}
           onChange={event => this.handleChange(event)}
@@ -65,7 +66,7 @@ class Form extends Component {
           value={this.state.number}
           onChange={event => this.handleChange(event)}
         />
-        <button onClick={event => this.createReservation(event)}>Make Reservation</button>
+        <button className='res-button' onClick={event => this.createReservation(event)}>Make Reservation</button>
       </form>
     );
   }
